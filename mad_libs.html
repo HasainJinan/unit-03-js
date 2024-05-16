@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/tf2-build');
+        @import url('https://fonts.googleapis.com/css2?family=Oldenburg&family=Rubik+Glitch&display=swap');
+        .label {
+            font-family: tf2 build;
+            font-size: 20px;
+            float: center;
+        }
+
+        #bg {
+            background-color: rgb(87, 244, 252);
+        }
+    </style>    
+</head>
+<body id="bg">
+    <h1 style="text-align: center; font-family: rubik glitch; font-size: 50px;">"It was a sunny day..."</h1>
+    <label class="label">Color: </label>
+    <input type="color" id="color" class="label">
+    <br>
+    <label class="label">Name: </label>
+    <input type="text" id="name" class="label">
+    <br>
+    <label class="label">Negative Adjective: </label>
+    <input type="text" id="adjective" class="label">
+    <br>
+    <label class="label">Another Color: </label>
+    <input type="color" id="color2" class="label">
+    <br>
+    <label class="label">Fruit: </label>
+    <input type="text" id="fruit" class="label">
+    <br>
+    <br>
+    <button onclick="start();changeColor()" class="label">Generate</button>
+
+    <h2 id="text" style="font-family: oldenburg;"></h2>
+    <br>
+    <br>
+    <br>
+    <img src="Images/Sunny Day.jpeg" alt="A Sunny Day" style="width: 500px; align-self: center;" id="pic">
+
+    <script>
+
+        let col = document.getElementById("color")
+        let name = document.getElementById("name")
+        let adj = document.getElementById("adjective")
+        let col2 = document.getElementById("color2")
+        let fruit = document.getElementById("fruit")
+        let story = document.getElementById("text")
+        let backg = document.getElementById("bg")
+        let pic = document.getElementById("pic")
+
+        function changeColor (color) {
+            document.querySelector('#bg').style.backgroundColor = col.value
+        }
+
+        function start () {
+            text.innerHTML = '"It' + " was a sunny day. They sky, a bright " + col.value + ". Birds sing on tree branches and swoop in between buildings. That was all before " + name.value + " descended upon Earth, laying waste to humanity with their " + adj.value + " sword. Radiating a malevolent " + col2.value + ' aura, they spared no one and ruined the moist rock in space, as it orbited Sol slowly and quietly, weeping at the destruction."' + " You finish reading the caption of the painting as you munch on a Martian " + fruit.value + ". Pretty neat story. Good thing it happened thousands of years ago."
+        }
+    </script>
+</body>
+</html>

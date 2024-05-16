@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+#loading {
+    width: 50px;
+    height: 57px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -28px 0 0 -25px;
+}
+    </style>
+
+</head>
+<body>
+    <a href="#" id="external-link">External link</a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+        $(function(){
+
+$('body').on('click', '#external-link', function(e)
+{
+    e.preventDefault();
+
+    var link = $(this).attr('href');
+    
+    $('body').append(
+        '<div id="overlay">' +
+        '<img id="loading" src="http://bit.ly/pMtW1K">' +
+        '</div>'
+    );
+    
+    setTimeout(function(){
+      $('#overlay').remove();
+      window.open( link );
+    }, 2000); //2 seconds
+});
+
+})
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sentence {
+            color: black;
+            background-color: white;
+        }
+        #sentence2 {
+            color: black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess my number</h1>
+    <label>Your Number: </label>
+    <input type="number" id="number" required>
+    <br>
+    <br>
+    <button onclick="button()">Enter</button>
+    <h2 id="sentence"></h2>
+    <h2 id="sentence2"></h2>
+
+    <script>
+        let num = document.getElementById("number")
+        let sentenceStyle = document.getElementById("sentence")
+        let sentenceStyle2 = document.getElementById("sentence2")
+        function button () {
+            sentenceStyle.innerText = "Your number is " + num.value + "."
+            if (num.value == 7) {
+                sentenceStyle2.innerText = "You guessed my number!"
+            }
+            else {
+                sentenceStyle2.innerText = "That is not my number. Try again!"
+            }
+        }
+    </script>
+</body>
+</html>
